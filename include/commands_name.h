@@ -14,8 +14,9 @@ enum Commands
     ADD = 5,
     MUL = 6,
     DIV = 7,
-    OUT = 8,
-    SUB = 9,
+    IN = 8,
+    OUT = 9,
+    SUB = 10,
     HLT = -1,
     STX_ERR = 666
 };
@@ -29,6 +30,7 @@ ErrorKeys Add(Stack* stk);
 ErrorKeys Div(Stack* stk);
 ErrorKeys Subtract(Stack* stk);
 
+ErrorKeys GetValue(Stack* stk);
 ErrorKeys Out(Stack* stk);
 
 ErrorKeys Halt(Stack* stk);

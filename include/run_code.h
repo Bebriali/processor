@@ -2,10 +2,9 @@
 #define RUN_CODE_H
 
 #include "error_keys.h"
+#include "SPU.h"
 
-typedef int CodeCell_t;
-
-size_t GetCode(const char* filename, char** buf);
-ErrorKeys Run(const char* filename);
+ErrorKeys GetCode(const char* filename, SPU* spu);
+ErrorKeys Run(const char* filename, SPU* spu);
 
 #endif

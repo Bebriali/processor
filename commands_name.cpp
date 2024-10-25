@@ -60,6 +60,16 @@ ErrorKeys Subtract(Stack* stk)
     return Push(stk, b - a);
 }
 
+ErrorKeys GetValue(Stack* stk)
+{
+    printf(MAGENTA("Enter value : "));
+    StackCell_t value = 0;
+    scanf("%lf", &value);
+    Push(stk, value);
+
+    return NO_ERRORS;
+}
+
 ErrorKeys Out(Stack* stk)
 {
     StackCell_t a = 0; StackPop(stk, &a);

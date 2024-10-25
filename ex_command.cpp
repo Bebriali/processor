@@ -18,7 +18,7 @@ ErrorKeys Compile(SPU* spu)
         switch (spu->code[spu->ip])
         {
             case PUSH:
-                Push(&spu->stack, spu->code[spu->ip]);
+                Push(&spu->stack, spu->code[++spu->ip]);
                 spu->ip++;
                 break;
             case POP:
@@ -51,6 +51,10 @@ ErrorKeys Compile(SPU* spu)
                 Subtract(&spu->stack);
                 spu->ip++;
                 break;
+            case IN:
+                GetValue(&spu->stack);
+                spu->ip += 1;
+                break;
             case OUT:
                 Out(&spu->stack);
                 spu->ip++;
@@ -60,13 +64,13 @@ ErrorKeys Compile(SPU* spu)
                 running = false;
                 break;
             case STX_ERR:
-                printf(RED("ERROR IN COMMAND\n"));
+                printf(RED("ERROR IN COMMAND : %d\n"), spu->code[spu->ip]);
                 DO_DUMP(&spu->stack);
                 Halt(&spu->stack);
                 running = false;
                 break;
             default:
-                printf(RED("ERROR IN COMMAND\n"));
+                printf(RED("ERROR IN COMMAND : %d\n"), spu->code[spu->ip]);
                 DO_DUMP(&spu->stack);
                 Halt(&spu->stack);
                 running = false;
