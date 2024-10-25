@@ -1,14 +1,11 @@
 #ifndef RUN_CODE_H
 #define RUN_CODE_H
 
-ErrorKeys Multiply(Stack* stk);
-ErrorKeys Add(Stack* stk);
+#include "error_keys.h"
 
-ErrorKeys Div(Stack* stk);
-ErrorKeys Subtract(Stack* stk);
+typedef int CodeCell_t;
 
-ErrorKeys Out(Stack* stk);
-
-ErrorKeys Halt(void);
+size_t GetCode(const char* filename, char** buf);
+ErrorKeys Run(const char* filename);
 
 #endif
