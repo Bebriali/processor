@@ -12,10 +12,11 @@ struct SPU
     CodeCell_t* code;
     size_t cur_code_size;
     size_t ip;
-    CodeCell_t registers[register_quantity];
+    StackCell_t registers[register_quantity];
     Stack stack;
 };
 
-ErrorKeys CtorSpu(SPU* spu);
+ErrorKeys CtorSpu(SPU* spu, const char* filename);
+ErrorKeys DumpSpu(SPU* spu);
 
 #endif

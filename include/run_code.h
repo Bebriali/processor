@@ -5,6 +5,5 @@
 #include "SPU.h"
 
 ErrorKeys GetCode(const char* filename, SPU* spu);
-ErrorKeys Run(const char* filename, SPU* spu);
 
 #endif

@@ -4,6 +4,7 @@
 #include "error_keys.h"
 #include "SPU.h"
 
-ErrorKeys Compile(SPU* spu);
+ErrorKeys Execute(SPU* spu);
+StackCell_t GetArgs(SPU* spu);
 
 #endif

@@ -3,6 +3,7 @@
 
 #include "error_keys.h"
 #include "stack.h"
+#include "SPU.h"
 
 enum Commands
 {
@@ -33,6 +34,12 @@ ErrorKeys Subtract(Stack* stk);
 ErrorKeys GetValue(Stack* stk);
 ErrorKeys Out(Stack* stk);
 
+ErrorKeys Sqr(Stack* stk);
+
 ErrorKeys Halt(Stack* stk);
+
+bool Equal(Stack* stk);
+bool Above(Stack* stk);
+bool Below(Stack* stk);
 
 #endif
